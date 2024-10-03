@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,6 +31,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val fullName = resources.getString(R.string.full_name);
+        val title = resources.getString(R.string.title);
+        val email = resources.getString(R.string.email);
+        val github = resources.getString(R.string.github);
+        val reddit = resources.getString(R.string.reddit);
+
         setContent {
             BusinessCardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -41,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Column(
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalArrangement = Arrangement.spacedBy(16.dp),
                         ) {
                             Image(
                                 contentDescription = "User image",
@@ -53,29 +58,31 @@ class MainActivity : ComponentActivity() {
 
                             Column(
                                 horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.spacedBy(88.dp)
+                                verticalArrangement = Arrangement.spacedBy(60.dp)
                             ) {
                                 Column(
-                                    horizontalAlignment = Alignment.CenterHorizontally
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(4.dp)
                                 ) {
                                     Text(
-                                        text = "Matheus Ferreira Santos",
+                                        text = fullName,
                                         style = Typography.titleMedium,
                                     )
                                     Text(
-                                        text = "Android developer",
+                                        text = title,
                                         style = Typography.bodySmall,
                                         color = Color.Gray
+                                    )
+                                    Text(
+                                        text = email,
+                                        style = Typography.labelSmall,
+                                        color = Color.Gray,
                                     )
                                 }
 
                                 Column(
                                     verticalArrangement = Arrangement.spacedBy(8.dp),
                                 ) {
-                                    Text(
-                                        text = "(11) 9 6581-9026",
-                                        style = Typography.bodyMedium,
-                                    )
                                     Row(
                                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                                         verticalAlignment = Alignment.CenterVertically
@@ -88,7 +95,7 @@ class MainActivity : ComponentActivity() {
                                                 .clip(RoundedCornerShape(100))
                                         )
                                         Text(
-                                            text = "GitHub",
+                                            text = github,
                                             style = Typography.bodyMedium,
                                         )
                                     }
@@ -105,7 +112,7 @@ class MainActivity : ComponentActivity() {
                                                 .clip(RoundedCornerShape(100))
                                         )
                                         Text(
-                                            text = "Reddit",
+                                            text = reddit,
                                             style = Typography.bodyMedium,
                                         )
                                     }
