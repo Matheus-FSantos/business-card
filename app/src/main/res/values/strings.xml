@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BusinessCard</string>
+    <string name="full_name">Matheus Ferreira Santos</string>
+    <string name="title">Android developer</string>
+    <string name="email">matheus.fs.contato@gmail.com</string>
+    <string name="github">Matheus-FSantos</string>
+    <string name="reddit">u/Creepy-Detective-892</string>
+</resources>
